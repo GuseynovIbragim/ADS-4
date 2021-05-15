@@ -6,7 +6,7 @@
 template<typename T>
 class TPQueue {
   // Сюда помещается описание структуры "Очередь с приоритетами"
-public:
+ public:
 void push(const T &data) {
 TQueue<T> new_queue;
 
@@ -40,7 +40,8 @@ while (!tmp.isEmpty()) {
 queue_.push(tmp.pop());
 }
 }
-private:
+
+ private:
 TQueue<T> queue_;
 };
 
@@ -51,14 +52,15 @@ struct SYM {
 
 template<typename T>
 class TQueue {
-private:
+ private:
     T *arr;
     int size;
     int begin,
         end;
     int count;
-public:
-    TQueue(int = 100);
+ public:
+    int = 100;
+    TQueue(int);
     ~TQueue();
 
     void push(const T &);
@@ -81,7 +83,7 @@ TQueue<T>::~TQueue() {
 }
 
 template<typename T>
-void TQueue<T>::push(const T & item) {
+void TQueue<T>::push( const T & item ) {
     assert( count < size );
 
     arr[end++] = item;
@@ -92,7 +94,7 @@ void TQueue<T>::push(const T & item) {
 }
 
 template<typename T>
-T TQueue<T>::pop() {
+T TQueue<T>::pop( ) {
     assert( count > 0 );
 
     T item = arr[begin++];
@@ -105,23 +107,23 @@ T TQueue<T>::pop() {
 }
 
 template<typename T>
-T TQueue<T>::get() const {
+T TQueue<T>::get( ) const {
     assert( count > 0 );
     return arr[begin];
 }
 
 template<typename T>
 bool TQueue<T>::isEmpty() const {
-  return count==0;
+  return count == 0;
 }
 
 template<typename T>
 bool TQueue<T>::isFull() const {
-  return count==size;
+  return count == size;
 }
 
-ostream & operator<<(std::ostream &os, const SYM &s) {
-    return os << '{' << s.ch << ", " << s.prior << '}';
+std::ostream & operator<<(std::ostream &os, const SYM &s) {
+return os << '{' << s.ch << ", " << s.prior << '}';
 }
 
 #endif // INCLUDE_TPQUEUE_H_

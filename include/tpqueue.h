@@ -59,8 +59,7 @@ class TQueue {
         end;
     int count;
  public:
-    int = 100;
-    TQueue(int);
+    TQueue(int 100);
     ~TQueue();
 
     void push(const T &);
@@ -84,7 +83,7 @@ TQueue<T>::~TQueue() {
 
 template<typename T>
 void TQueue<T>::push( const T & item ) {
-    assert( count < size );
+    assert ( count < size );
 
     arr[end++] = item;
     count++;
@@ -95,7 +94,7 @@ void TQueue<T>::push( const T & item ) {
 
 template<typename T>
 T TQueue<T>::pop( ) {
-    assert( count > 0 );
+    assert (count > 0);
 
     T item = arr[begin++];
     count--;
@@ -107,8 +106,8 @@ T TQueue<T>::pop( ) {
 }
 
 template<typename T>
-T TQueue<T>::get( ) const {
-    assert( count > 0 );
+T TQueue<T>::get() const {
+    assert (count > 0);
     return arr[begin];
 }
 
